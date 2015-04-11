@@ -1,0 +1,26 @@
+<div ng-app="mxhack">
+
+  <h1>Yuju ya funciona</h1>
+
+  <h3><%= @title %></h3>
+  
+  <fieldset ng-controller="TweetsCtrl">
+    <input type="text" placeholder="Username" ng-model="username" ng-change="fetch()"/>
+    <ul>
+      <li ng-repeat="tweet in tweets">
+        <span>{{tweet.message}}</span>
+        <br/>
+        <small>{{tweet.created_at | date }}</small>
+      </li>
+    </ul>
+      
+  </fieldset>
+
+  <fieldset ng-controller="TweetComposerCtrl">
+    <h1>Tweet something</h1>
+    <input type="text" placeholder="Username" ng-model="username"/>
+    <input type="text" placeholder="New status" ng-model="status"/>
+    <button ng-click="create()">Tweet</button>
+  </fieldset>
+
+</div>
